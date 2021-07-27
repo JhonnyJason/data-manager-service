@@ -1,0 +1,87 @@
+############################################################
+
+@local = https://localhost:6999
+
+############################################################
+
+
+############################################################
+#region authenticationlocal.http
+### 
+POST {{local}}/addClientToServe
+content-type: application/json
+
+{
+"clientPublicKey": "...", 
+"timestamp": "...", 
+"signature": "..."
+}
+### 
+POST {{local}}/getNodeId
+content-type: application/json
+
+{
+"publicKey": "...", 
+"timestamp": "...", 
+"signature": "..."
+}
+### 
+POST {{local}}/startSession
+content-type: application/json
+
+{
+"publicKey": "...", 
+"timestamp": "...", 
+"signature": "..."
+}
+
+#endregion
+
+############################################################
+#region datamanagementlocal.http
+### 
+POST {{local}}/storeFile
+content-type: application/json
+
+{
+"authCode": "...", 
+"publicKey": "...", 
+"fileName": "...", 
+"fileContent": "..."
+}
+### 
+POST {{local}}/updateFile
+content-type: application/json
+
+{
+"authCode": "...", 
+"publicKey": "...", 
+"fileName": "...", 
+"fileContent": "..."
+}
+### 
+POST {{local}}/storeRestrictedFile
+content-type: application/json
+
+{
+"authCode": "...", 
+"publicKey": "...", 
+"fileName": "...", 
+"fileContent": "...", 
+"keyNames": "..."
+}
+### 
+POST {{local}}/updateRestriction
+content-type: application/json
+
+{
+"authCode": "...", 
+"publicKey": "...", 
+"fileName": "...", 
+"keyNames": "...", 
+"mode": "..."
+}
+
+#endregion
+
+

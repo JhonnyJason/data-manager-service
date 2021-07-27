@@ -1,0 +1,87 @@
+############################################################
+
+@deploy = https://
+
+############################################################
+
+
+############################################################
+#region authenticationdeploy.http
+### 
+POST {{deploy}}/addClientToServe
+content-type: application/json
+
+{
+"clientPublicKey": "...", 
+"timestamp": "...", 
+"signature": "..."
+}
+### 
+POST {{deploy}}/getNodeId
+content-type: application/json
+
+{
+"publicKey": "...", 
+"timestamp": "...", 
+"signature": "..."
+}
+### 
+POST {{deploy}}/startSession
+content-type: application/json
+
+{
+"publicKey": "...", 
+"timestamp": "...", 
+"signature": "..."
+}
+
+#endregion
+
+############################################################
+#region datamanagementdeploy.http
+### 
+POST {{deploy}}/storeFile
+content-type: application/json
+
+{
+"authCode": "...", 
+"publicKey": "...", 
+"fileName": "...", 
+"fileContent": "..."
+}
+### 
+POST {{deploy}}/updateFile
+content-type: application/json
+
+{
+"authCode": "...", 
+"publicKey": "...", 
+"fileName": "...", 
+"fileContent": "..."
+}
+### 
+POST {{deploy}}/storeRestrictedFile
+content-type: application/json
+
+{
+"authCode": "...", 
+"publicKey": "...", 
+"fileName": "...", 
+"fileContent": "...", 
+"keyNames": "..."
+}
+### 
+POST {{deploy}}/updateRestriction
+content-type: application/json
+
+{
+"authCode": "...", 
+"publicKey": "...", 
+"fileName": "...", 
+"keyNames": "...", 
+"mode": "..."
+}
+
+#endregion
+
+

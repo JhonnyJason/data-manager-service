@@ -4,11 +4,47 @@
 
 ############################################################
 ### local test requests
-POST {{local}}/route
+POST {{local}}/addClientToServe
 content-type: application/json
 
 {
+    "clientPublicKey": "...", 
+    "timestamp": "...", 
+    "signature": "..."
 }
+
+### 
+POST {{local}}/getNodeId
+content-type: application/json
+
+{
+    "clientPublicKey": "...", 
+    "timestamp": "...", 
+    "signature": "..."
+}
+
+### 
+POST {{local}}/startSession
+content-type: application/json
+
+{
+    "clientPublicKey": "...", 
+    "timestamp": "...", 
+    "signature": "..."
+}
+
+### 
+POST {{local}}/startSession
+content-type: application/json
+
+{
+    "clientPublicKey": "...", 
+    "timestamp": "...", 
+    "signature": "..."
+}
+
+
+
 
 ############################################################
 ### deployment requests
